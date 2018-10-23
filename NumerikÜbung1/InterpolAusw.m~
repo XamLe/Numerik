@@ -1,0 +1,9 @@
+function [y] = InterpolAusw(x, X, C)
+p = 0;
+for i = 1:length(X)
+    for k = 1:i
+    p = p + C(i)* symprod((x-X(i)), 1, i);
+end
+y = p(x);
+
+end

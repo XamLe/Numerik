@@ -1,0 +1,23 @@
+NewtonInterpolation([0,1,3,4],[2,1,2,4])
+
+function [c] = DividierteDifferenzen(x,y)
+%Berechnet die Dividierten Differenzen
+l  = length(x);
+
+if l ~= 1 
+    c = DividierteDifferenzen(x(2:l),y(2:l))-(DividierteDifferenzen(x(1:l-1),y(1:l-1))/(x(l)-x(1))
+else
+    c  = y;
+end
+
+end
+
+function [c] = NewtonInterpolation(x,y)
+%Berechnet die Koeffizienten des Newton Interpolationspolynoms durch
+%dividierte Differenzen.
+for i = 1:length(x)
+    c(i) = DividierteDifferenzen(x(1:i),y(1:i))
+end
+c;
+end
+
