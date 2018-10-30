@@ -21,3 +21,9 @@ fplot(Bx, [1400 3400])
 Cb = NewtonInterpolation(X, b);
 bx = @(x) InterpolAusw(x, X, Cb);
 fplot(bx, [1400 3400])
+
+tic
+for c = [1:1000]
+    CP = NewtonInterpolation(X, B);
+end
+toc
