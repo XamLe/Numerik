@@ -8,6 +8,7 @@ CT = NewtonInterpolation(X,T);
 Tx = @(x) InterpolAusw(x, X, CT);
 fplot(Tx, [1400 3400])
 
+
 hold on
 
 CP = NewtonInterpolation(X, P);
@@ -21,3 +22,10 @@ fplot(Bx, [1400 3400])
 Cb = NewtonInterpolation(X, b);
 bx = @(x) InterpolAusw(x, X, Cb);
 fplot(bx, [1400 3400])
+hold off
+
+tic
+for c = [1:1000]
+    CP = NewtonInterpolation(X, P);
+end
+toc
