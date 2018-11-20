@@ -17,14 +17,16 @@ function [A, B, S] = berechnungUndPlot(x, y, M, h)
     %Definiere S
     S = cell(1,n);
     for i = 1:n
-       S{i} = @(t) (M(i+1) * (t-x(i))^3 / (6 * h(i))) + (M(i) * (x(i+1)-t)^3 / (6 * h(i))) + A(i) * (t - x(i)) + B(i);
+       S{i} = @(t) (M(i+1) * (t-x(i)).^3 / (6 * h(i))) + (M(i) * (x(i+1)-t).^3 ./ (6 * h(i))) + A(i) * (t - x(i)) + B(i);
     end
     
     %Plote die Ergebnisse
     
+    
     hold on
     for i = 1:n
-        fplot(S{i});
+        t = x(i):0.1:x(i+1);
+        plot(t,S{i}(t),'-');
     end
     plot(x,y,'o')
 end

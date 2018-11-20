@@ -5,7 +5,8 @@ function [] = testStahl()
     y_stress = [38.76 45.56 49.80 51.89 52.88 52.92 51.68];
     y_strain = [7.44 9.3 11.16 13.02 14.88 16.74 18.60];
     
-    subplot(1,3,1); natuerlicheSplineInterpolation(x, y_load);
-    subplot(1,3,2); natuerlicheSplineInterpolation(x, y_stress);
-    subplot(1,3,3); natuerlicheSplineInterpolation(x, y_strain);
+    %subplot(1,3,1); 
+    natuerlicheSplineInterpolation(y_strain, y_stress);
+    %subplot(1,3,2); natuerlicheSplineInterpolation(x, y_stress);
+    %subplot(1,3,3); natuerlicheSplineInterpolation(x, y_strain);
 end
