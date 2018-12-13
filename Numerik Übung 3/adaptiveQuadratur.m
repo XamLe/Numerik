@@ -20,6 +20,7 @@ while length(I) > 1
     end
 end
 %Berechne nun M(f) auf dem Gitter x
+n
 summierteMittelpunktRegel(x,f)
 end
 
